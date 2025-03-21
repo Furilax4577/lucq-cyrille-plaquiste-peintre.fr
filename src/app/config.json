@@ -1,0 +1,96 @@
+{
+    "towns": [
+        {
+            "name": "Burnhaupt-le-Haut",
+            "postalCode": 68520
+        },
+        {
+            "name": "Dannemarie",
+            "postalCode": 68210
+        },
+        {
+            "name": "Belfort",
+            "postalCode": 90000
+        },
+        {
+            "name": "Altkirch",
+            "postalCode": 68130
+        },
+        {
+            "name": "Seppois-le-bas",
+            "postalCode": 68580
+        },
+        {
+            "name": "Seppois-le-haut",
+            "postalCode": 68580
+        },
+        {
+            "name": "Rougemont-le-Château",
+            "postalCode": 90110
+        },
+        {
+            "name": "Grandvillars",
+            "postalCode": 90600
+        },
+        {
+            "name": "Hirsingue",
+            "postalCode": 68560
+        },
+        {
+            "name": "Illfurth",
+            "postalCode": 68720
+        },
+        {
+            "name": "Aspach-le-haut",
+            "postalCode": 68700
+        },
+        {
+            "name": "Michelbach",
+            "postalCode": 68700
+        },
+        {
+            "name": "Spechbach",
+            "postalCode": 68720
+        },
+        {
+            "name": "Cernay",
+            "postalCode": 68700
+        },
+        {
+            "name": "Fontaine",
+            "postalCode": 90150
+        },
+        {
+            "name": "Sochaux",
+            "postalCode": 25600
+        },
+        {
+            "name": "Offemont",
+            "postalCode": 90300
+        },
+        {
+            "name": "Illfurth",
+            "postalCode": 68720
+        },
+        {
+            "name": "Hirsingue",
+            "postalCode": 68560
+        },
+        {
+            "name": "Roppe",
+            "postalCode": 90380
+        },
+        {
+            "name": "Delle",
+            "postalCode": 90100
+        },
+        {
+            "name": "Danjoutin",
+            "postalCode": 90400
+        },
+        {
+            "name": "Montbéliard",
+            "postalCode": 25200
+        }
+    ]
+}

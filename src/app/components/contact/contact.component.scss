@@ -1,0 +1,90 @@
+@use "../../styles/variables.scss" as *;
+
+:host {
+  .contact-form {
+    padding: 30px 0;
+    margin: 0 auto;
+  }
+
+  form {
+    padding: 15px 0;
+  }
+
+  .form-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: $grey;
+  }
+
+  .form-control {
+    display: flex;
+    padding: 15px;
+    flex-basis: 33.3333333%;
+    flex-direction: column;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .control-name {
+  }
+
+  .control-phone {
+  }
+
+  .control-email {
+  }
+
+  .control-message,
+  .control-submit {
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .control-message {
+  }
+
+  .control-submit {
+  }
+
+  .input-error {
+    position: absolute;
+    color: $invalid;
+    display: flex;
+    flex-basis: 100%;
+    font-size: 0.85em;
+    bottom: -2px;
+  }
+
+  .form-tips {
+    padding: 15px;
+    width: 100%;
+    color: $primary;
+    text-align: center;
+  }
+
+  a {
+    color: $primary;
+  }
+
+  .contact-canal + .contact-canal {
+    margin-top: 30px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    .form-group {
+      flex-direction: column;
+    }
+
+    .form-control {
+      padding: 15px 0;
+    }
+  }
+}

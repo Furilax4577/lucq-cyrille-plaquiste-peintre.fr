@@ -1,0 +1,96 @@
+@use "../../styles/variables.scss" as *;
+
+:host {
+  .desktop-nav {
+    background-color: $black;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 30px;
+
+    .desktop-menu {
+      display: flex;
+      margin-left: auto;
+      height: 100%;
+      text-transform: uppercase;
+
+      li {
+        box-sizing: border-box;
+        border-bottom: 3.5px solid $primary;
+        display: flex;
+        margin-left: 30px;
+        height: 100%;
+        align-items: center;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      &:hover a {
+        color: $light_grey;
+      }
+
+      a,
+      a:hover {
+        color: white;
+      }
+    }
+
+    .homeLink {
+      color: $white;
+      font-size: 2em;
+      margin-right: 30px;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    .burger-trigger {
+      display: none;
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media only screen and (max-width: 680px) {
+    .burger-trigger {
+      display: flex !important;
+      margin-left: auto;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      background-color: $black;
+      border: 1px solid $dark_grey;
+      color: $white;
+      border-radius: 5px;
+    }
+
+    .desktop-menu {
+      display: none !important;
+    }
+
+    .mobile-nav.is-active {
+      display: flex !important;
+    }
+
+    .mobile-menu {
+      width: 100%;
+
+      li {
+        border-bottom: 1px solid $light_grey;
+        font-size: 1.5em;
+
+        a {
+          padding: 15px 30px;
+          display: flex;
+        }
+      }
+    }
+  }
+}

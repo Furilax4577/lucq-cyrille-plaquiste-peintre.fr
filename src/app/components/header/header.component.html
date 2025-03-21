@@ -1,0 +1,14 @@
+<nav class="desktop-nav">
+  <a href="/" class="homeLink"><span>LC</span> Création</a>
+  <ul class="desktop-menu">
+    <li *ngFor="let link of links"><a [href]="link.url">{{link.label}}</a></li>
+  </ul>
+  <button class="burger-trigger" (click)="toggleMenu()" aria-label="Open menu"><fa-icon class="fa-2x"
+      [icon]="isActive ? faXmark : faBars"></fa-icon></button>
+</nav>
+
+<nav class="mobile-nav" [class.is-active]="isActive">
+  <ul class="mobile-menu">
+    <li *ngFor="let link of links"><a [href]="link.url">{{link.label}}</a></li>
+  </ul>
+</nav>

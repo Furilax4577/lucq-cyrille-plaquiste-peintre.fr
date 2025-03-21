@@ -1,0 +1,33 @@
+@use "../../styles/variables.scss" as *;
+
+.popin-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  display: flex;
+}
+
+.popin-container {
+  background-color: white;
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.popin-title {
+  font-size: 1.2em;
+}
+
+.popin-content {
+  color: $dark_grey;
+  padding: 25px 0;
+}

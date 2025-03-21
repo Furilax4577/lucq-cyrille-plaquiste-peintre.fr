@@ -1,0 +1,7 @@
+<div class="popin-overlay" *ngIf="popin" (click)="close()">
+    <div class="popin-container">
+        <div class="popin-title">{{ popin.title }}</div>
+        <div class="popin-content">{{ popin.content }}</div>
+        <div class="popin-actions"><button class="button" (click)="close()">Fermer</button></div>
+    </div>
+</div>

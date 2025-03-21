@@ -1,0 +1,26 @@
+@use "../../styles/variables.scss" as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    color: $grey;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $primary;
+    }
+  }
+
+  span {
+    padding: 0 5px;
+  }
+}

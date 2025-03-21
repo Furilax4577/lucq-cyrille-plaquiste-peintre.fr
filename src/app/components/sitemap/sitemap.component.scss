@@ -1,0 +1,28 @@
+@use "../../styles/variables.scss" as *;
+
+:host {
+  .sitemap {
+    padding: 30px 0;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    margin-left: 30px;
+    line-height: 26px;
+  }
+
+  li::marker {
+    color: $primary;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration-color: $primary;
+    }
+  }
+}

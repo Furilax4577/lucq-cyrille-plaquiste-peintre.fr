@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let item of breakcrumbItems;let last = last">
+        <ng-container *ngIf="last">{{item.label}}</ng-container>
+        <ng-container *ngIf="!last"><a [href]="item.url">{{item.label}}</a><span>></span></ng-container>
+    </li>
+</ul>

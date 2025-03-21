@@ -1,0 +1,9 @@
+<app-banner [title]="title" [breakcrumbItems]="breakcrumbItems"></app-banner>
+
+<section class="galery">
+  <div class="container">
+    <ng-container *ngFor="let image of images">
+      <img [src]="image.thumbPath" (click)="openDialog(image)" />
+    </ng-container>
+  </div>
+</section>

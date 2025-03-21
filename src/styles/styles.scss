@@ -1,0 +1,112 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@use "reset" as *;
+@use "variables" as *;
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+} /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  padding: 0 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0 0 15px 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.4rem;
+}
+
+p + p {
+  margin: 0 0 15px 0;
+}
+
+input,
+textarea,
+.button {
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  border: 1px solid $grey;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+textarea {
+  resize: none;
+}
+
+.button {
+  display: inline-block;
+  background-color: $primary;
+  border: unset;
+  font-weight: bold;
+  font-size: 1em;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: $light_grey !important;
+    color: $grey !important;
+    cursor: default;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
