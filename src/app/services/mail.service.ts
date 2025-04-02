@@ -15,6 +15,6 @@ export class MailService {
   constructor(private httpClient: HttpClient) {}
 
   sendMail(data: SendEmailData) {
-    return this.httpClient.post<any>('/api', data);
+    return this.httpClient.post<any>('http://localhost:3000/mail', data);
   }
 }

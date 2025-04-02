@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,8 +11,7 @@ interface Link {
 
 @Component({
   selector: 'app-header',
-
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

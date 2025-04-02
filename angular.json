@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lucq-cyrille-plaquiste-peintre.fr": {
+    "angular-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/lucq-cyrille-plaquiste-peintre.fr",
+            "outputPath": "dist/angular-project",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,9 +29,10 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles/styles.scss"
-            ],
+            "styles": ["src/styles/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            },
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -69,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lucq-cyrille-plaquiste-peintre.fr:build:production"
+              "buildTarget": "angular-project:build:production"
             },
             "development": {
-              "buildTarget": "lucq-cyrille-plaquiste-peintre.fr:build:development"
+              "buildTarget": "angular-project:build:development"
             }
           },
           "defaultConfiguration": "development"

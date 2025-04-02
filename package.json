@@ -1,19 +1,17 @@
 {
-  "name": "lucq-cyrille-plaquiste-peintre.fr",
+  "name": "angular-project",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prebuild": "npm run gallery-generator-compile && npm run gallery-generator",
+    "prebuild": "npm run generate:gallery",
     "build": "ng build",
-    "postbuild": "npm run sitemap-generator-compile && npm run sitemap-generator",
+    "postbuild": "npm run generate:sitemap",
     "start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "sitemap-generator": "node src/scripts/sitemap-generator.js",
-    "sitemap-generator-compile": "tsc src/scripts/sitemap-generator.ts --resolveJsonModule --esModuleInterop",
-    "gallery-generator": "node src/scripts/gallery-generator.js",
-    "gallery-generator-compile": "tsc src/scripts/gallery-generator.ts --resolveJsonModule --esModuleInterop",
-    "serve:ssr:lucq-cyrille-plaquiste-peintre.fr": "node dist/lucq-cyrille-plaquiste-peintre.fr/server/server.mjs"
+    "generate:gallery": "ts-node -P tsconfig.scripts.json scripts/generate-gallery.ts",
+    "generate:sitemap": "ts-node -P tsconfig.scripts.json scripts/generate-sitemap.ts",
+    "serve:ssr:angular-project": "node dist/angular-project/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +50,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "ts-node": "^10.9.2"
   }
 }

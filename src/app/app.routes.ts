@@ -1,43 +1,40 @@
 import { Routes } from '@angular/router';
-import { ElectricianComponent } from './components/electrician/electrician.component';
-import { HomeComponent } from './components/home/home.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { PainterComponent } from './components/painter/painter.component';
-import { PlastererComponent } from './components/plasterer/plasterer.component';
-import { SitemapComponent } from './components/sitemap/sitemap.component';
-import { TilerComponent } from './components/tiler/tiler.component';
 import { ConfigTown } from './services/town.service';
-
 import config from './config.json';
-
 import { URLify } from './common';
-import { ContactComponent } from './components/contact/contact.component';
-import { GaleryComponent } from './components/gallery/gallery.component';
-import { ServicesComponent } from './components/services/services.component';
-import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 
 const tilerRoutes: Routes = [
   {
     path: '',
-    component: TilerComponent,
+    loadComponent: () =>
+      import('./pages/tiler/tiler.component').then((m) => m.TilerComponent),
   },
 ];
 const painterRoutes: Routes = [
   {
     path: '',
-    component: PainterComponent,
+    loadComponent: () =>
+      import('./pages/painter/painter.component').then(
+        (m) => m.PainterComponent
+      ),
   },
 ];
 const plastererRoutes: Routes = [
   {
     path: '',
-    component: PlastererComponent,
+    loadComponent: () =>
+      import('./pages/plasterer/plasterer.component').then(
+        (m) => m.PlastererComponent
+      ),
   },
 ];
 const electricianRoutes: Routes = [
   {
     path: '',
-    component: ElectricianComponent,
+    loadComponent: () =>
+      import('./pages/electrician/electrician.component').then(
+        (m) => m.ElectricianComponent
+      ),
   },
 ];
 
@@ -52,57 +49,121 @@ config.towns.forEach((town: ConfigTown) => {
   tilerRoutes.push({
     data,
     path: URLify(town.name),
-    component: TilerComponent,
+    loadComponent: () =>
+      import('./pages/tiler/tiler.component').then((m) => m.TilerComponent),
   });
 
   painterRoutes.push({
     data,
     path: URLify(town.name),
-    component: PainterComponent,
+    loadComponent: () =>
+      import('./pages/painter/painter.component').then(
+        (m) => m.PainterComponent
+      ),
   });
 
   plastererRoutes.push({
     data,
     path: URLify(town.name),
-    component: PlastererComponent,
+    loadComponent: () =>
+      import('./pages/plasterer/plasterer.component').then(
+        (m) => m.PlastererComponent
+      ),
   });
 
   electricianRoutes.push({
     data,
     path: URLify(town.name),
-    component: ElectricianComponent,
+    loadComponent: () =>
+      import('./pages/electrician/electrician.component').then(
+        (m) => m.ElectricianComponent
+      ),
   });
 });
 
 const defaultRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/home/home.routes').then((m) => m.routes),
+  },
   {
     path: 'services',
     children: [
-      { path: '', component: ServicesComponent },
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/services/services.component').then(
+            (m) => m.ServicesComponent
+          ),
+      },
       {
         path: 'platrerie',
-        component: PlastererComponent,
+        loadComponent: () =>
+          import('./pages/plasterer/plasterer.component').then(
+            (m) => m.PlastererComponent
+          ),
         children: plastererRoutes,
       },
       {
         path: 'electricite',
-        component: ElectricianComponent,
+        loadComponent: () =>
+          import('./pages/electrician/electrician.component').then(
+            (m) => m.ElectricianComponent
+          ),
         children: electricianRoutes,
       },
       {
         path: 'peinture',
-        component: PainterComponent,
+        loadComponent: () =>
+          import('./pages/painter/painter.component').then(
+            (m) => m.PainterComponent
+          ),
         children: painterRoutes,
       },
-      { path: 'carrelage', component: TilerComponent, children: tilerRoutes },
+      {
+        path: 'carrelage',
+        loadComponent: () =>
+          import('./pages/tiler/tiler.component').then((m) => m.TilerComponent),
+        children: tilerRoutes,
+      },
     ],
   },
-  { path: 'galerie', component: GaleryComponent },
-  { path: 'temoignages', component: TestimoniesComponent },
-  { path: 'contactez-moi', component: ContactComponent },
-  { path: 'plan-du-site', component: SitemapComponent },
-  { path: 'page-introuvable', component: PageNotFoundComponent },
+  {
+    path: 'galerie',
+    loadComponent: () =>
+      import('./pages/gallery/gallery.component').then(
+        (m) => m.GalleryComponent
+      ),
+  },
+  {
+    path: 'temoignages',
+    loadComponent: () =>
+      import('./pages/testimonies/testimonies.component').then(
+        (m) => m.TestimoniesComponent
+      ),
+  },
+  {
+    path: 'contactez-moi',
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent
+      ),
+  },
+  {
+    path: 'plan-du-site',
+    loadComponent: () =>
+      import('./pages/sitemap/sitemap.component').then(
+        (m) => m.SitemapComponent
+      ),
+  },
+  {
+    path: 'page-introuvable',
+    loadComponent: () =>
+      import('./pages/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent
+      ),
+  },
   { path: '**', redirectTo: '/page-introuvable' },
 ];
 
