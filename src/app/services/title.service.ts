@@ -69,6 +69,11 @@ export class TitleService {
   setKeywords(keywords: string[]) {
     keywords.unshift(this.name);
     this.meta.addTag({ name: 'keywords', content: keywords.join(', ') });
+    this.meta.addTag({
+      name: 'description',
+      content:
+        'Vous recherchez un partenaire fiable et compétent pour vos projets de rénovation résidentielle? Chez LC Création, je suis là pour rendre vos projets aussi simples que possible, en vous offrant des services professionnels et une expertise inégalée.',
+    });
   }
 
   getTownKeywords(keywords: string[], townName: string) {
