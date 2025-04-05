@@ -5,12 +5,11 @@ import { TitleService } from '../../services/title.service';
 import { Town, TownService } from '../../services/town.service';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { BreakcrumbItem } from '../../components/breadcrumb/breadcrumb.component';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sitemap',
 
-  imports: [CommonModule, BannerComponent, RouterModule],
+  imports: [CommonModule, BannerComponent],
   templateUrl: './sitemap.component.html',
   styleUrl: './sitemap.component.scss',
 })

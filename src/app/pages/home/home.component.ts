@@ -13,6 +13,11 @@ export class HomeComponent {
 
   constructor(private titleService: TitleService) {
     this.titleService.setTitle(this.title);
-    this.titleService.setKeywords(['plaquiste', 'peintre', 'peinture']);
+    this.titleService.setKeywords([
+      'LC création',
+      'plaquiste',
+      'peintre',
+      'peinture',
+    ]);
   }
 }
